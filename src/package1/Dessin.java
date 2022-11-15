@@ -1,5 +1,6 @@
 package package1;
 
+import java.awt.Graphics;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -36,7 +37,7 @@ public class Dessin extends JPanel{
      * @param ch le train  à ajouter au Dessin
      * @see train
      */
-    public void ajouterObjet(TrainCercle t) {
+    public void ajouterObjet(IObjetDessinable t) {
 
         if (!objDessin.contains(t)) {
             // l'objet n'est pas déjà dans la liste
@@ -65,7 +66,7 @@ public class Dessin extends JPanel{
      *
      * @param g le contexte graphique
      */
-  
+   
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //  dessiner les trains que contient le dessin
@@ -81,7 +82,7 @@ public class Dessin extends JPanel{
     public void animer() {
         //  dessiner les Objets que contient le dessin
         for (IObjetDessinable c : objDessin ) {
-        	c.deplacer();
+        	((IObjetAnimable) c).deplacer();
             
         }
     }
