@@ -1,8 +1,9 @@
 package package1;
 
 import java.awt.Graphics;
-import java.awt.COLORS; 
-import java.Graphics2D;
+
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.BasicStroke;
 
     public class Visage extends Forme{ 
@@ -285,7 +286,7 @@ import java.awt.BasicStroke;
      */
     public void dessiner(Graphics g) {
         // dessiner le contour du visage
-    	Graphics2D g2 = (Graphics2D) g.create();
+    	       Graphics2D g2 = (Graphics2D) g.create();
     		   g2.setColor(Color.BLACK);
     	       g2.setStroke(new BasicStroke(epaisseurTrait));
     	       g2.drawOval(super.x, super.y, largeur, hauteur);
